@@ -1,0 +1,69 @@
+# To run this, download the BeautifulSoup zip file
+# http://www.py4e.com/code3/bs4.zip
+# and unzip it in the same directory as this file
+
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+import ssl
+import re
+
+#uses: https://www.py4e.com/code3/urllinks.py?PHPSESSID=a919a1186a8e311a3b2c44aa077aaa76
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+url = input("Enter your url: ")
+count = int(input("Enter count: "))
+position = int(input("Enter position: "))
+html = urllib.request.urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, 'html.parser')
+
+# Retrieve all of the anchor tags
+tags = soup('a')
+
+#retrieves title tag, to print out the first name
+title = soup('title')
+title2 = [elt.text for elt in title]
+
+#converts title tag from BeautifulSoup object to string via type casting
+
+regex = "that\s(\w+)"
+
+hi = re.findall(regex, title2[0])
+
+#Use regular expression to find out the name of the first guy
+
+funk = []
+name = []
+correct_name = []
+correct_name.append(hi[0])
+answer =[]
+answer.append(url)
+
+#hi[0] denotes the first value extracted first name
+
+for i in range(0,count):
+    for tag in tags:
+        funk.append(tag.get('href',None))
+        name.append(tag.get_text())
+        """print(tag.get('href', None))""" 
+
+        #gets url and also first name
+
+    answer.append(funk[position-1]) 
+
+    #depending on position
+    correct_name.append(name[position-1])
+    url = funk[position-1]
+    html = urllib.request.urlopen(url, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    tags = soup('a')
+    funk.clear()
+    name.clear()
+
+    #clear funk and name fields where data stored before loop ends
+
+for x in correct_name:
+    print(x)
