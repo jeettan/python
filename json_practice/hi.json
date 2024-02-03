@@ -1,0 +1,49 @@
+{
+    "menu": [
+        {
+            "first_name": "jeet",
+            "last_name": "tan",
+            "email": "jeetta3@gmail.com"
+        },
+        {
+            "first_name": "Tan-san",
+            "last_name": "oguz",
+            "email": "tanoguz3@gmail.com"
+        },
+        {
+            "first_name": "Jacob",
+            "last_name": "White",
+            "email": "jaycobwhite@gmail.com"
+        },
+        {
+            "first_name": "Faker",
+            "last_name": "Kim",
+            "email": "itsfaker@riotgames.com"
+        },
+        {
+            "first_name": "Locodoco",
+            "last_name": "Jung un",
+            "email": "locodoco@riotgames.com"
+        },
+        {
+            "first_name": "Jacob",
+            "last_name": "Green",
+            "email": "jaycobbgreen@gmail.com"
+        },
+        {
+            "first_name": "Kuku",
+            "last_name": "Lulu",
+            "email": "kukululu@gmail.com"
+        },
+        {
+            "first_name": "{first_name}",
+            "last_name": "{last_name}",
+            "email": "{email}"
+        },
+        {
+            "first_name": " Jeet",
+            "last_name": "Tan",
+            "email": "llifestyle@gmail.com"
+        }
+    ]
+}
