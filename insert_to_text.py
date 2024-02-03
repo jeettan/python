@@ -1,3 +1,4 @@
+#Has four options, add to file, view the text file, sort the text file or exit program.
 
 loopOn = True
 
